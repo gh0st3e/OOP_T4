@@ -1,0 +1,16 @@
+C:\Study\OOP\Lab1\bin\Debug\netcoreapp3.1\Lab1.exe
+C:\Study\OOP\Lab1\bin\Debug\netcoreapp3.1\Lab1.deps.json
+C:\Study\OOP\Lab1\bin\Debug\netcoreapp3.1\Lab1.runtimeconfig.json
+C:\Study\OOP\Lab1\bin\Debug\netcoreapp3.1\Lab1.runtimeconfig.dev.json
+C:\Study\OOP\Lab1\bin\Debug\netcoreapp3.1\Lab1.dll
+C:\Study\OOP\Lab1\bin\Debug\netcoreapp3.1\Lab1.pdb
+C:\Study\OOP\Lab1\obj\Debug\netcoreapp3.1\Lab1.csproj.AssemblyReference.cache
+C:\Study\OOP\Lab1\obj\Debug\netcoreapp3.1\Lab1.Form1.resources
+C:\Study\OOP\Lab1\obj\Debug\netcoreapp3.1\Lab1.csproj.GenerateResource.cache
+C:\Study\OOP\Lab1\obj\Debug\netcoreapp3.1\Lab1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Study\OOP\Lab1\obj\Debug\netcoreapp3.1\Lab1.AssemblyInfoInputs.cache
+C:\Study\OOP\Lab1\obj\Debug\netcoreapp3.1\Lab1.AssemblyInfo.cs
+C:\Study\OOP\Lab1\obj\Debug\netcoreapp3.1\Lab1.csproj.CoreCompileInputs.cache
+C:\Study\OOP\Lab1\obj\Debug\netcoreapp3.1\Lab1.dll
+C:\Study\OOP\Lab1\obj\Debug\netcoreapp3.1\Lab1.pdb
+C:\Study\OOP\Lab1\obj\Debug\netcoreapp3.1\Lab1.genruntimeconfig.cache

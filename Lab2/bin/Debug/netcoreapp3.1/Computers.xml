@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ITLab xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Computers>
+    <Computer>
+      <ComputerType>Ноутбук</ComputerType>
+      <Proc>
+        <ProcName>Intel Core i7</ProcName>
+        <ProcP>Intel</ProcP>
+        <ProcCount>1</ProcCount>
+      </Proc>
+      <Video>
+        <VideoName>Nvidia</VideoName>
+        <VideoMemory>1 ГБ</VideoMemory>
+        <DirectX>v. 9</DirectX>
+      </Video>
+      <SizeOZU>32</SizeOZU>
+      <TypeOZU>DDR4</TypeOZU>
+      <SizeHD>1024</SizeHD>
+      <TypeHD>HDD</TypeHD>
+      <Date>2022-02-17T18:23:47.767244+03:00</Date>
+      <Price>9465</Price>
+    </Computer>
+    <Computer>
+      <ComputerType>Стационарный компьютер</ComputerType>
+      <Proc>
+        <ProcName>AMD</ProcName>
+        <ProcP>AMD</ProcP>
+        <ProcCount>1</ProcCount>
+      </Proc>
+      <Video>
+        <VideoName>Nvidia</VideoName>
+        <VideoMemory>1 ГБ</VideoMemory>
+        <DirectX>v. 9</DirectX>
+      </Video>
+      <SizeOZU>64</SizeOZU>
+      <TypeOZU>DDR4</TypeOZU>
+      <SizeHD>512</SizeHD>
+      <TypeHD>SSD</TypeHD>
+      <Date>2022-02-17T18:23:47.767244+03:00</Date>
+      <Price>4466</Price>
+    </Computer>
+  </Computers>
+  <Proc>
+    <ProcCount>0</ProcCount>
+  </Proc>
+  <Video />
+</ITLab>
