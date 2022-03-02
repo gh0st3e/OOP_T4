@@ -39,28 +39,31 @@
       <Date>2022-02-17T18:23:47.767244+03:00</Date>
       <Price>4466</Price>
     </Computer>
-    <Computer>
-      <ComputerType>Ноутбук</ComputerType>
-      <Proc>
-        <ProcName>Pentium</ProcName>
-        <ProcP>2</ProcP>
+  </Computers>
+  <Proc>
+    <ProcCount>0</ProcCount>
+  </Proc>
+  <Video />
+</ITLab> <ProcName>fdf</ProcName>
+        <ProcP>fffd</ProcP>
         <ProcCount>1</ProcCount>
       </Proc>
       <Video>
-        <VideoName>3</VideoName>
+        <VideoName>df</VideoName>
         <VideoMemory>1 ГБ</VideoMemory>
         <DirectX>v. 9</DirectX>
       </Video>
-      <SizeOZU>4</SizeOZU>
+      <SizeOZU>2</SizeOZU>
       <TypeOZU>DDR4</TypeOZU>
-      <SizeHD>5</SizeHD>
+      <SizeHD>2</SizeHD>
       <TypeHD>HDD</TypeHD>
-      <Date>2022-02-23T11:08:58.0135004+03:00</Date>
-      <Price>6829</Price>
+      <Date>2022-02-24T18:33:50.1527443+03:00</Date>
+      <Price>7657</Price>
     </Computer>
   </Computers>
   <Proc>
     <ProcCount>0</ProcCount>
   </Proc>
   <Video />
+</ITLab>deo />
 </ITLab>

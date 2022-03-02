@@ -30,15 +30,19 @@ namespace Lab2
             MemoryCount.SelectedItem = "1 ГБ";
             DirectX.SelectedItem = "v. 9";
             ITLab = new ITLab();
+            
+            statusStrip1.Hide();
+            
 
         }
 
         private void Add_Click(object sender, EventArgs e) // Добавить
         {
-            ComputerValidation computerValidation = new ComputerValidation();
+            
             if (Processor.Text.Equals(""))
             {
                 MessageBox.Show("Введите название процессора");
+                return;
             }
             
             try
@@ -63,7 +67,7 @@ namespace Lab2
                         DirectX = DirectX.Text
                     },
                     SizeOZU = int.Parse(SizeOZU.Text),
-                    TypeOZU = Type_OZU.Text,
+                    
                     SizeHD = int.Parse(SizeHD.Text),
                     TypeHD = TypeHD.Text,
                     Date = Date.Value,
@@ -72,13 +76,23 @@ namespace Lab2
                 };
                 //computerValidation.IsValid(computer);
                 //ComputerValidation.Validate(computer);
-                
-                if(ComputerValidation.Validate(computer)==true)
+                if (Type_OZU.Text == "DDR3")
+                {
+                    DDR3 type = new DDR3();
+                    computer.TypeOZU = type.getMemory();
+                }
+                if (Type_OZU.Text == "DDR4")
+                {
+                    DDR4 type = new DDR4();
+                    computer.TypeOZU = type.getMemory();
+                }
+                if (ComputerValidation.Validate(computer)==true)
                 {
                     dataGridView1.Rows.Add(computer.ComputerType, computer.Proc, computer.Video, computer.SizeOZU, computer.TypeOZU, computer.SizeHD, computer.TypeHD, computer.Date);
                     ITLab.Computers.Add(computer);
                     Status.Text = Date.Value.ToString() + " кол-во созданных объектов: " + ITLab.Computers.Count;
                     statusStrip1.Items.Add(Date.Value.ToString() + " кол-во созданных объектов: " + ITLab.Computers.Count);
+                    actionBack = 1;
                 }
                 
             }
@@ -132,7 +146,7 @@ namespace Lab2
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            MessageBox.Show(e.RowIndex.ToString());
         }
 
         private void размерОЗУToolStripMenuItem_Click(object sender, EventArgs e)
@@ -173,22 +187,64 @@ namespace Lab2
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            
+        }
+        List<Computer> DeletedItems = new List<Computer>();
+        
+        private void Back_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeletedItems.Add(ITLab.Computers[dataGridView1.Rows.Count - 2]);
+                dataGridView1.Rows.RemoveAt(dataGridView1.Rows.Count - 2);
+            }
+            catch
+            {
+                MessageBox.Show("Нечего удалять");
+            }
 
         }
 
-        private void Back_Click(object sender, EventArgs e)
+        private void Forward_Click(object sender, EventArgs e)
         {
-            if (actionBack == 1)
+            try
             {
-                dataGridView1.Rows.RemoveAt(dataGridView1.Rows.Count-2);
-                actionBack = 0;
+                var computer = DeletedItems.Last();
+                dataGridView1.Rows.Add(computer.ComputerType, computer.Proc, computer.Video, computer.SizeOZU, computer.TypeOZU, computer.SizeHD, computer.TypeHD, computer.Date);
+                DeletedItems.RemoveAt(DeletedItems.Count - 1);
             }
-            if(actionBack==2)
+            catch
             {
-                dataGridView1.Rows.RemoveAt(dataGridView1.Rows.Count-2);
-                dataGridView1.Rows.RemoveAt(dataGridView1.Rows.Count-2);
-                actionBack = 0;
+                MessageBox.Show("Нечего добавлять");
             }
+        }
+
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PageBuilder pageBuilder = new PageBuilder();
+            Computer computer = new Computer();
+            computer = pageBuilder.PostPage(1);
+            //MessageBox.Show(pageBuilder.PostPage(1).ToString());
+            ITLab.Computers.Add(computer);
+            dataGridView1.Rows.Add(computer.ComputerType, computer.Proc, computer.Video, computer.SizeOZU, computer.TypeOZU, computer.SizeHD, computer.TypeHD, computer.Date);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SingletonForm1 form1_info = SingletonForm1.getInstance(this.BackColor, this.Font, this.Size);
+            MessageBox.Show(form1_info.ToString(), "Информация об форме");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            Computer computer = new Computer();
+            computer = Clone.AddClone(ITLab.Computers.Last());
+            ITLab.Computers.Add(computer);
+            dataGridView1.Rows.Add(computer.ComputerType, computer.Proc, computer.Video, computer.SizeOZU, computer.TypeOZU, computer.SizeHD, computer.TypeHD, computer.Date);
+
         }
     }
     public class ComputerValidation : ValidationAttribute

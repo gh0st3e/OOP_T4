@@ -29,6 +29,7 @@ namespace Lab2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Computer_Type = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Processor = new System.Windows.Forms.TextBox();
@@ -76,6 +77,9 @@ namespace Lab2
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.Back = new System.Windows.Forms.Button();
             this.Forward = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -513,22 +517,55 @@ namespace Lab2
             // 
             // Back
             // 
-            this.Back.Location = new System.Drawing.Point(334, 0);
+            this.Back.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Back.BackgroundImage")));
+            this.Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Back.Location = new System.Drawing.Point(348, 0);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(75, 23);
+            this.Back.Size = new System.Drawing.Size(30, 24);
             this.Back.TabIndex = 32;
-            this.Back.Text = "Назад";
             this.Back.UseVisualStyleBackColor = true;
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
             // Forward
             // 
-            this.Forward.Location = new System.Drawing.Point(415, 0);
+            this.Forward.BackgroundImage = global::Lab2.Properties.Resources._61752;
+            this.Forward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Forward.Location = new System.Drawing.Point(384, 1);
             this.Forward.Name = "Forward";
-            this.Forward.Size = new System.Drawing.Size(75, 23);
+            this.Forward.Size = new System.Drawing.Size(30, 23);
             this.Forward.TabIndex = 33;
-            this.Forward.Text = "Вперед";
             this.Forward.UseVisualStyleBackColor = true;
+            this.Forward.Click += new System.EventHandler(this.Forward_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(537, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(132, 41);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Построить через Builder";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(675, 39);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(132, 41);
+            this.button2.TabIndex = 35;
+            this.button2.Text = "Информация";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(813, 39);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(132, 41);
+            this.button3.TabIndex = 36;
+            this.button3.Text = "Клонировать";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -536,6 +573,9 @@ namespace Lab2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1057, 627);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Forward);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.statusStrip1);
@@ -630,6 +670,9 @@ namespace Lab2
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.Button Forward;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 
