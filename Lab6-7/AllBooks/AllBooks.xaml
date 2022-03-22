@@ -1,0 +1,37 @@
+﻿<Window x:Class="Lab6_7.AllBooks.AllBooks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab6_7.AllBooks"
+        mc:Ignorable="d"
+        Title="AllBooks" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="BooksList" Background="#FFE0B90B">
+            <ListBox.ItemTemplate x:Uid="ITM">
+                <DataTemplate x:Name="DataTempl">
+                    <StackPanel x:Name="SP" Margin="5">
+
+                        <TextBlock x:Name="test" FontSize="16" Text="{Binding Path=Name}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="16" Text="{Binding Path=Author}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="16" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="16" Text="{Binding Path=Count}" HorizontalAlignment="Center" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Подробнее" Margin="0,0,20,0"></TextBlock>
+                            <Button x:Name="SeeMore" Width="30" Content="{Binding Path=ID}" Click="Descr" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Удалить" Margin="0,0,20,0"></TextBlock>
+                            <Button x:Name="Del" Width="15" Content="{Binding Path=ID}" Click="Del" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Редактировать" Margin="0,0,20,0"></TextBlock>
+                            <Button x:Name="Edit" Width="20" Content="{Binding Path=ID}" Click="Edit" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

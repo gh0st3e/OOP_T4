@@ -1,0 +1,21 @@
+﻿<Window x:Class="Lab6_7_New.BookDescription.BookDescription"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab6_7_New.BookDescription"
+        mc:Ignorable="d"
+        Title="BookDescription" Height="450" Width="800" Background="#FFE8C00B">
+    <Grid>
+        <TextBlock x:Name="BookName" HorizontalAlignment="Left" Margin="33,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="62" Width="400" FontSize="48"/>
+        <TextBlock x:Name="BookAuthor" HorizontalAlignment="Left" Margin="47,71,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="50" Width="400" FontSize="36"/>
+        <TextBlock x:Name="BeforeBookPrice" Text="{DynamicResource BD_Price}" Margin="621,266,117,124"></TextBlock>
+        <TextBlock x:Name="BookPrice" HorizontalAlignment="Left" Margin="675,260,-283,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="26" Width="400" FontSize="18"/>
+        <TextBlock x:Name="BeforeBookCount" Text="{DynamicResource BD_Count}" Margin="586,292,134,98" RenderTransformOrigin="0.359,0.579"></TextBlock>
+        <TextBlock x:Name="BookCount" HorizontalAlignment="Left" Margin="675,286,-283,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="29" Width="400" FontSize="18"/>
+        <TextBlock x:Name="BookDescr" HorizontalAlignment="Left" Margin="33,126,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="260" Width="527" FontSize="36"/>
+        <Button x:Name="BD_Buy" Content="{DynamicResource BD_Buy}" HorizontalAlignment="Left" Margin="630,365,0,0" VerticalAlignment="Top" Width="119" Height="31" Click="BuyBook"/>
+        <Image x:Name="BookImage" HorizontalAlignment="Left" Height="158" Margin="617,10,0,0" VerticalAlignment="Top" Width="165"/>
+
+    </Grid>
+</Window>

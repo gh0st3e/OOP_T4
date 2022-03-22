@@ -1,0 +1,59 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Lab6_7_New" xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <!--Меню-->
+    <v:String x:Key="MenuAddBook">Add</v:String>
+    <v:String x:Key="MenuSort">Sort</v:String>
+    <v:String x:Key="MenuSortByPrice">Sort By Price</v:String>
+    <v:String x:Key="MenuSortByCount">Sort By Count</v:String>
+    <v:String x:Key="MenuSave">Save</v:String>
+    <v:String x:Key="MenuLoad">Load</v:String>
+    <v:String x:Key="MenuSearch">Search</v:String>
+    <v:String x:Key="SwitchLanguage">Change Language</v:String>
+    <v:String x:Key="RuLanguage">Russian</v:String>
+    <v:String x:Key="EnLanguage">English</v:String>
+    <v:String x:Key="Select">Select</v:String>
+    <v:String x:Key="SelectByPrice">Select By Price</v:String>
+    <v:String x:Key="SelectByType">Select By Type</v:String>
+
+    <!--Разное-->
+    <v:String x:Key="MainMore">More</v:String>
+    <v:String x:Key="MainDel">Delete</v:String>
+    <v:String x:Key="MainEdit">Edit</v:String>
+    <v:String x:Key="LowPrice">Start Price</v:String>
+    <v:String x:Key="HighPrice">End Price</v:String>
+
+    <!--Подробнее-->
+    <v:String x:Key="BD_Buy">Buy</v:String>
+    <v:String x:Key="BD_Price">Price</v:String>
+    <v:String x:Key="BD_Count">Count:</v:String>
+
+    <!--Добавить-->
+    <v:String x:Key="CB_Name">Name</v:String>
+    <v:String x:Key="CB_Author">Author</v:String>
+    <v:String x:Key="CB_Price">Price</v:String>
+    <v:String x:Key="CB_Count">Count </v:String>
+    <v:String x:Key="CB_Descr">Description</v:String>
+    <v:String x:Key="CB_Add">Add</v:String>
+    <v:String x:Key="CB_AddImage">Add Image</v:String>
+    <v:String x:Key="CB_Type">Type</v:String>
+    <v:String x:Key="CB_Rate">Rate</v:String>
+    <v:String x:Key="CB_Sale">Sale</v:String>
+    <v:String x:Key="CB_TypeBook">Book</v:String>
+    <v:String x:Key="CB_TypeMagazine">Magazine</v:String>
+    <v:String x:Key="CB_TypeStudentBook">StudentBook</v:String>
+
+    <!--Изменить-->
+    <v:String x:Key="EB_Name">Name</v:String>
+    <v:String x:Key="EB_Author">Author</v:String>
+    <v:String x:Key="EB_Price">Price</v:String>
+    <v:String x:Key="EB_Count">Count </v:String>
+    <v:String x:Key="EB_Descr">Description</v:String>
+    <v:String x:Key="EB_Change">Change</v:String>
+    <v:String x:Key="EB_ChangeImage">Change Image</v:String>
+
+    <!--Поиск-->
+    <v:String x:Key="SearchName">Enter Name</v:String>
+    <v:String x:Key="SearchButton">Find</v:String>
+
+</ResourceDictionary>

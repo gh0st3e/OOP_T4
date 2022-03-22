@@ -1,0 +1,100 @@
+﻿<Window x:Class="Lab6_7_New.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab6_7_New"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1600" Cursor="">
+    <Grid>
+        <Menu Width="1600" RenderTransformOrigin="0.495,-1.35" Margin="0,0,-8,836">
+            <MenuItem x:Name="MenuAddBook" Header="{DynamicResource MenuAddBook}" Click="AddBook" Background="{DynamicResource buttonBrush}"></MenuItem>
+            <MenuItem x:Name="MenuSort" Header="{DynamicResource MenuSort}">
+                <MenuItem x:Name="MenuSortByPrice" Header="{DynamicResource MenuSortByPrice}" Click="SortByPrice"></MenuItem>
+                <MenuItem x:Name="MenuSortByCount" Header="{DynamicResource MenuSortByCount}" Click="SortByCount"></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="MenuSave" Header="{DynamicResource MenuSave}" Click="SaveInXml"></MenuItem>
+            <MenuItem x:Name="MenuLoad" Header="{DynamicResource MenuLoad}" Click="LoadFromXml"></MenuItem>
+            <MenuItem x:Name="MenuSearch" Header="{DynamicResource MenuSearch}" Click="Seacrh"></MenuItem>
+            <MenuItem x:Name="LanguageSwitch" Header="{DynamicResource SwitchLanguage}">
+                <MenuItem x:Name="RuLanguage" Header="{DynamicResource RuLanguage}" Click="ChangeLanguageToRu"></MenuItem>
+                <MenuItem x:Name="EnLanguage" Header="{DynamicResource EnLanguage}" Click="ChangeLanguageToEn"></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="Choose" Header="{DynamicResource Select}">
+                <MenuItem x:Name="SPrice" Header="{DynamicResource SelectByPrice}" Click="ChooseByPrice" ></MenuItem>
+                <MenuItem x:Name="SType" Header="{DynamicResource SelectByType}" Click="ChooseByType"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <ListBox x:Name="BooksList" Background="#FFE0B90B" Margin="0,245,792,0" Width="800">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5" Orientation="Horizontal">
+                        <Image x:Name="BookImage" Source="{Binding Path=ImagePath}" Width="100" Height="150"></Image>
+                        <StackPanel Orientation="Vertical">
+                            
+                        
+                        <TextBlock x:Name="test" FontSize="16" Text="{Binding Path=Name}"  />
+                        <TextBlock FontSize="16" Text="{Binding Path=Author}"  />
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
+                                <TextBlock FontSize="16" Text="$" HorizontalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="{DynamicResource BD_Count}" HorizontalAlignment="Center" />
+                                <TextBlock FontSize="16" Text="{Binding Path=Count}" HorizontalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{DynamicResource MainMore}" Margin="0,0,20,0"></TextBlock>
+                            <Button x:Name="BookDescription" Width="15" Content="{Binding Path=ID}" Click="BookDescription" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{DynamicResource MainDel}" Margin="0,0,20,0"></TextBlock>
+                            <Button x:Name="BookDelete" Width="15" Content="{Binding Path=ID}" Click="BookDelete" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{DynamicResource MainEdit}" Margin="0,0,20,0"></TextBlock>
+                            <Button x:Name="BookEdit" Width="15" Content="{Binding Path=ID}" Click="BookEdit" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                        </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="674,33,0,0" TextWrapping="Wrap" Text="OZ.by" VerticalAlignment="Top" Height="105" Width="214" FontSize="72" Background="{StaticResource buttonBrush}"/>
+        <ListBox x:Name="BooksListChoosed" Background="Yellow"  Margin="792,245,0,0" Width="800">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5" Orientation="Horizontal">
+                        <Image x:Name="BookImage" Source="{Binding Path=ImagePath}" Width="100" Height="150"></Image>
+                        <StackPanel Orientation="Vertical">
+
+
+                            <TextBlock x:Name="test" FontSize="16" Text="{Binding Path=Name}"  />
+                            <TextBlock FontSize="16" Text="{Binding Path=Author}"  />
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
+                                <TextBlock FontSize="16" Text="$" HorizontalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="{DynamicResource BD_Count}" HorizontalAlignment="Center" />
+                                <TextBlock FontSize="16" Text="{Binding Path=Count}" HorizontalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{DynamicResource MainMore}" Margin="0,0,20,0"></TextBlock>
+                                <Button x:Name="BookDescription" Width="15" Content="{Binding Path=ID}" Click="BookDescription" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{DynamicResource MainDel}" Margin="0,0,20,0"></TextBlock>
+                                <Button x:Name="BookDelete" Width="15" Content="{Binding Path=ID}" Click="BookDelete" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{DynamicResource MainEdit}" Margin="0,0,20,0"></TextBlock>
+                                <Button x:Name="BookEdit" Width="15" Content="{Binding Path=ID}" Click="BookEdit" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

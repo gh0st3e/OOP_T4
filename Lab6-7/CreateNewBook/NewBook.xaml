@@ -1,0 +1,33 @@
+﻿<Window x:Class="Lab6_7.CreateNewBook.NewBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab6_7.CreateNewBook"
+        mc:Ignorable="d"
+        Title="NewBook" Height="401.137" Width="370.455"
+        Background="Yellow">
+    <Grid Margin="0,0,2,2">
+
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="23" Margin="38,21,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Author" HorizontalAlignment="Left" Height="23" Margin="38,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Price" HorizontalAlignment="Left" Height="23" Margin="38,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Desription" HorizontalAlignment="Left" Height="90" Margin="38,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Count" HorizontalAlignment="Left" Height="23" Margin="38,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+
+
+        <TextBlock x:Name="CreateName" HorizontalAlignment="Left" Margin="40,0,0,0" TextWrapping="Wrap" Text="{DynamicResource CreateName}" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CreateAuthor" HorizontalAlignment="Left" Margin="40,49,0,0" TextWrapping="Wrap" Text="{DynamicResource CreateAuthor}" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CreatePrice" HorizontalAlignment="Left" Margin="40,98,0,0" TextWrapping="Wrap" Text="{DynamicResource CreatePrice}" VerticalAlignment="Top" RenderTransformOrigin="0.708,-2.147"/>
+        <TextBlock x:Name="CreateCount" HorizontalAlignment="Left" Margin="38,155,0,0" TextWrapping="Wrap" Text="{DynamicResource CreateCount}" VerticalAlignment="Top" RenderTransformOrigin="0.661,4.727"/>
+        <TextBlock x:Name="CreateDescr" HorizontalAlignment="Left" Margin="38,200,0,0" TextWrapping="Wrap" Text="{DynamicResource CreateDescr}" VerticalAlignment="Top" RenderTransformOrigin="0.661,4.727"/>
+
+        <Button x:Name="AddNewBook" Content="{DynamicResource AddNewBook}" HorizontalAlignment="Left" Margin="233,322,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="AddNewImage" Content="{DynamicResource AddNewImage}" HorizontalAlignment="Left" Margin="194,291,0,0" VerticalAlignment="Top" Width="145" Click="AddImage"/>
+        <Image x:Name="CreateImage" HorizontalAlignment="Left" Height="100" Margin="220,171,0,0" VerticalAlignment="Top" Width="100"/>
+        
+
+
+    </Grid>
+</Window>

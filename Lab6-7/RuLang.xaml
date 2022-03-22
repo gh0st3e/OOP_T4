@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:local="clr-namespace:Lab6_7" xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <v:String x:Key="AddBook">Добавить</v:String>
+    <v:String x:Key="Sort">Сортировать</v:String>
+    <v:String x:Key="PriceSort">Сортировать по цене</v:String>
+    <v:String x:Key="CountSort">Сортировать по количеству</v:String>
+    <v:String x:Key="SaveBtn">Сохранить</v:String>
+    <v:String x:Key="LoadBtn">Загрузить</v:String>
+    <v:String x:Key="Language">Язык</v:String>
+    <v:String x:Key="DescriptionButton">Подробнее</v:String>
+    <v:String x:Key="DeleteButton">Удалить</v:String>
+
+    <v:String x:Key="CreateName">Имя</v:String>
+    <v:String x:Key="CreateAuthor">Автор</v:String>
+    <v:String x:Key="CreatePrice">Цена</v:String>
+    <v:String x:Key="CreateCount">Количество</v:String>
+    <v:String x:Key="CreateDescr">Описание</v:String>
+
+    <v:String x:Key="AddNewBook">Добавить</v:String>
+    <v:String x:Key="AddNewImage">Добавить изображение</v:String>
+</ResourceDictionary>
