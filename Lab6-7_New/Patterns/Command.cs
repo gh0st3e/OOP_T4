@@ -3,70 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Lab6_7_New.Patterns
 {
-    abstract class Command
+    
+    public class RelayCommand : ICommand
     {
-        public abstract void Execute();
-        public abstract void Undo();
-    }
-    interface ICommand
-    {
-        void Execute();
-        void Undo();
-    }
+        private Action<object> execute;
+        private Func<object, bool> canExecute;
 
-    // Receiver - Получатель для удаления элемента
-    class ShopDelItems
-    {
-        public void DeleteItem()
+        public event EventHandler CanExecuteChanged
         {
-            //Удалить элемент
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public void ReturnItem()
+        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
         {
-            //Вернуть элеменет
-        }
-    }
-
-    class ShoopDelItemsCommand : ICommand
-    {
-        ShopDelItems shopDel;
-        public ShoopDelItemsCommand(ShopDelItems shopdel)
-        {
-            shopDel = shopdel;
-        }
-        public void Execute()
-        {
-            shopDel.DeleteItem();
-        }
-        public void Undo()
-        {
-            shopDel.ReturnItem();
-        }
-    }
-
-    // Invoker - инициатор 
-    class Pult
-    {
-        ICommand command;
-
-        public Pult() { }
-
-        public void SetCommand(ICommand com)
-        {
-            command = com;
+            this.execute = execute;
+            this.canExecute = canExecute;
         }
 
-        public void DelItem()
+        public bool CanExecute(object parameter)
         {
-            command.Execute();
+            return this.canExecute == null || this.canExecute(parameter);
         }
-        public void ReturnItem()
+
+        public void Execute(object parameter)
         {
-            command.Undo();
+            this.execute(parameter);
         }
     }
 }

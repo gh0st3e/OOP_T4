@@ -27,6 +27,7 @@
     <v:String x:Key="BD_Buy">Buy</v:String>
     <v:String x:Key="BD_Price">Price</v:String>
     <v:String x:Key="BD_Count">Count:</v:String>
+    <v:String x:Key="BD_Rate">Rate:</v:String>
 
     <!--Добавить-->
     <v:String x:Key="CB_Name">Name</v:String>

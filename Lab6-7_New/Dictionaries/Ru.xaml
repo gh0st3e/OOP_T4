@@ -27,6 +27,7 @@
     <v:String x:Key="BD_Buy">Купить</v:String>
     <v:String x:Key="BD_Price">Цена</v:String>
     <v:String x:Key="BD_Count">Количество: </v:String>
+    <v:String x:Key="BD_Rate">Рейтинг:</v:String>
 
     <!--Добавить-->
     <v:String x:Key="CB_Name">Название</v:String>

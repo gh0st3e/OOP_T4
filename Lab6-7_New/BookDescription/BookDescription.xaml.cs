@@ -39,6 +39,7 @@ namespace Lab6_7_New.BookDescription
             BookPrice.Text = CurrentBook.Price.ToString();
             BookCount.Text = CurrentBook.Count.ToString();
             BookDescr.Text = CurrentBook.Description.ToString();
+            BookRate.Text = CurrentBook.Rate.ToString();
             if(CurrentBook.ImagePath!=null)
             {
                 BookImage.Source = new BitmapImage(new Uri(CurrentBook.ImagePath));
@@ -53,6 +54,7 @@ namespace Lab6_7_New.BookDescription
             {
                 CurrentBook.Count--;
                 ShowInfo();
+                MainWindow.MainForm.ShowSelectedBooks();
             }
             
             

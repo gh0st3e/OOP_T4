@@ -2,35 +2,24 @@
 <ArrayOfBook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Book>
     <ID>0</ID>
-    <Name>1</Name>
-    <Author>1</Author>
-    <Price>10</Price>
-    <Count>1</Count>
-    <Type>Book</Type>
-    <Rate>1</Rate>
-    <Sale>10%</Sale>
-    <Description>1</Description>
-  </Book>
-  <Book>
-    <ID>1</ID>
-    <Name>2</Name>
+    <Name>екнгекв</Name>
     <Author>2</Author>
-    <Price>20</Price>
-    <Count>2</Count>
-    <Type>Magazine</Type>
+    <Price>2</Price>
+    <Count>0</Count>
+    <Type>Book</Type>
     <Rate>2</Rate>
-    <Sale>30%</Sale>
+    <Sale>10%</Sale>
     <Description>2</Description>
   </Book>
   <Book>
-    <ID>2</ID>
-    <Name>3</Name>
-    <Author>3</Author>
-    <Price>30</Price>
-    <Count>3</Count>
-    <Type>StudentBook</Type>
-    <Rate>3</Rate>
-    <Sale>50%</Sale>
-    <Description>3</Description>
+    <ID>1</ID>
+    <Name>1</Name>
+    <Author>2</Author>
+    <Price>1</Price>
+    <Count>1</Count>
+    <Type>Book</Type>
+    <Rate>1</Rate>
+    <Sale>0%</Sale>
+    <Description>1</Description>
   </Book>
 </ArrayOfBook>

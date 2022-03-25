@@ -30,10 +30,10 @@ namespace Lab6_7_New
             InitializeComponent();
             MainForm = this;
 
-            this.MaxHeight = 900;
-            this.MaxWidth = 1600;
-            this.MinHeight = 900;
-            this.MinWidth = 1600;
+            //this.MaxHeight = 900;
+            //this.MaxWidth = 1600;
+            this.MinHeight = 450;
+            this.MinWidth = 800;
 
             StreamResourceInfo sri = Application.GetResourceStream(
             new Uri("../mycursor.ani", UriKind.Relative));
@@ -50,6 +50,9 @@ namespace Lab6_7_New
                 Source = new Uri("C:/Study/OOP/Lab6-7_New/Resources/DynamicDictionary.xaml")
             };
 
+           
+
+            DataContext = new Patterns.ApplicationsViewModel();
             ShowLibrary();
         }
 
@@ -61,12 +64,20 @@ namespace Lab6_7_New
 
         public void ShowSelectedBooks()
         {
+            foreach(Book_Model.Book book in ChoosedBooks)
+            {
+                foreach(Book_Model.Book nativeBook in books)
+                {
+                    
+                }
+            }
             BooksListChoosed.ItemsSource = null;
             BooksListChoosed.ItemsSource = ChoosedBooks;
         }
 
         private void AddBook(object sender, RoutedEventArgs e)
         {
+            MenuAddBook.Command = ApplicationCommands.New;
             CreateBook.CreateBook AddBook = new CreateBook.CreateBook(languagePath);
             AddBook.Show();
         }
@@ -78,15 +89,13 @@ namespace Lab6_7_New
             int index = int.Parse(e.Source.ToString().Last().ToString());
             Lab6_7_New.BookDescription.BookDescription bookDescription = new Lab6_7_New.BookDescription.BookDescription(books[index],languagePath);
             bookDescription.Show();
+            
         }
 
         private void BookDelete(object sender, RoutedEventArgs e)
         {
 
-            Patterns.Pult pult = new Patterns.Pult();
-            Patterns.ShopDelItems shop_del_items = new Patterns.ShopDelItems();
-            pult.SetCommand(new Patterns.ShoopDelItemsCommand(shop_del_items));
-            pult.DelItem();
+            
 
             int index = int.Parse(e.Source.ToString().Last().ToString());
             books.RemoveAt(index);
@@ -97,7 +106,7 @@ namespace Lab6_7_New
                 
             }
             ShowLibrary();
-            ShowSelectedBooks();
+            BooksListChoosed.ItemsSource = null;
         }
 
         private void BookEdit(object sender, RoutedEventArgs e)
@@ -105,37 +114,9 @@ namespace Lab6_7_New
             int index = int.Parse(e.Source.ToString().Last().ToString());
             EditBook.EditBook editBook = new EditBook.EditBook(books[index],languagePath);
             editBook.Show();
+            BooksListChoosed.ItemsSource = null;
         }
-
-        private void SortByPrice(object sender, RoutedEventArgs e)
-        {
-            int index = 0;
-            var SortedByPrice = from i in books
-                                orderby i.Price
-                                select i;
-            foreach(Book_Model.Book book in SortedByPrice)
-            {
-                books[index] = book;
-                index++;
-            }
-            ShowLibrary();
-        }
-
-        private void SortByCount(object sender, RoutedEventArgs e)
-        {
-            int index = 0;
-            var SortedByPrice = from i in books
-                                orderby i.Count
-                                select i;
-            foreach (Book_Model.Book book in SortedByPrice)
-            {
-                books[index] = book;
-                index++;
-            }
-            ShowLibrary();
-        }
-
-        private void SaveInXml(object sender, RoutedEventArgs e)
+        public void SaveInXml()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Book_Model.Book>));
             using (FileStream stream = new FileStream("Library.xml", FileMode.Create))
@@ -144,7 +125,7 @@ namespace Lab6_7_New
             }
         }
 
-        private void LoadFromXml(object sender, RoutedEventArgs e)
+        public void LoadFromXml()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Book_Model.Book>));
             using (FileStream stream = new FileStream("Library.xml", FileMode.Open))
@@ -159,13 +140,13 @@ namespace Lab6_7_New
             ShowLibrary();
         }
 
-        private void Seacrh(object sender, RoutedEventArgs e)
+        public void Seacrh()
         {
             SeachBook.Search search = new SeachBook.Search(languagePath);
             search.Show();
         }
 
-        private void ChangeLanguageToRu(object sender, RoutedEventArgs e)
+        public void ChangeLanguageToRu()
         {
             languagePath = "Dictionaries/Ru.Xaml";
             ResourceDictionary language = new ResourceDictionary();
@@ -173,7 +154,7 @@ namespace Lab6_7_New
             Resources.MergedDictionaries.Add(language);
         }
 
-        private void ChangeLanguageToEn(object sender, RoutedEventArgs e)
+        public void ChangeLanguageToEn()
         {
             languagePath = "Dictionaries/En.Xaml";
             ResourceDictionary language = new ResourceDictionary();
@@ -181,13 +162,13 @@ namespace Lab6_7_New
             Resources.MergedDictionaries.Add(language);
         }
 
-        private void ChooseByPrice(object sender, RoutedEventArgs e)
+        public void ChooseByPrice()
         {
             Selection.SelectByPrice selectByPrice = new Selection.SelectByPrice(books,languagePath);
             selectByPrice.Show();
         }
 
-        private void ChooseByType(object sender, RoutedEventArgs e)
+        public void ChooseByType()
         {
             Selection.SelectByType selectByType = new Selection.SelectByType(books,languagePath);
             selectByType.Show();
