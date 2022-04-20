@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Lab6_7_New" xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <Style x:Key="ChangeTextBlock">
+        <Style.Setters>
+            <Setter Property="TextBlock.Background" Value="Red" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="ChangeMenu">
+        <Style.Setters>
+            <Setter Property="MenuItem.Foreground" Value="Red"/>
+            <Setter Property="MenuItem.Background" Value="Green"/>
+            <Setter Property="MenuItem.FontSize" Value="14"/>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="ChangeListBox">
+        <Style.Setters>
+            <Setter Property="MenuItem.Background" Value="Green"/>
+        </Style.Setters>
+    </Style>
+
+</ResourceDictionary>
