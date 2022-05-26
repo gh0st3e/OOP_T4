@@ -36,12 +36,7 @@ namespace Lab10_WPF.Insert
         private void AddNewBook_Click(object sender, RoutedEventArgs e)
         {
             GetID();
-            string name = BookName.Text;
-            string author = BookAuthor.Text;
-            int price = int.Parse(BookPrice.Text);
-            int count = int.Parse(BookCount.Text);
-            string bookimage = BookImage.Text;
-
+            
             con.SqlConnet.Open();
             MySqlTransaction transaction = con.SqlConnet.BeginTransaction();
             MySqlCommand commandTrans = con.SqlConnet.CreateCommand();
@@ -49,6 +44,13 @@ namespace Lab10_WPF.Insert
 
             try
             {
+                string name = BookName.Text;
+                string author = BookAuthor.Text;
+                int price = int.Parse(BookPrice.Text);
+                if (price < 0) throw new Exception();
+                int count = int.Parse(BookCount.Text);
+                if (count < 0) throw new Exception();
+                string bookimage = BookImage.Text;
                 command = new MySqlCommand($"INSERT INTO books (ID,image,name,author,price,count) VALUES ({++CurrentID},'{bookimage}','{name}','{author}',{price},{count})", con.SqlConnet);
                 command.ExecuteNonQuery();
                 command = new MySqlCommand($"INSERT INTO sales (ID,Selled) VALUES ('{CurrentID}')", con.SqlConnet);
@@ -61,7 +63,7 @@ namespace Lab10_WPF.Insert
             catch
             {
                 transaction.Rollback();
-                MessageBox.Show("Опа а нихуя то не получилось");
+                MessageBox.Show("ошибка");
             }
         }
         public void GetID()

@@ -46,8 +46,10 @@ namespace Lab10_WPF.Update
             {
                 try
                 {
-                    int.Parse(BookCount.Text);
-                    int.Parse(BookPrice.Text);
+                    int ccount = int.Parse(BookCount.Text);
+                    if (ccount < 0) throw new Exception();
+                    int pprice = int.Parse(BookPrice.Text);
+                    if (pprice < 0) throw new Exception();
                 }
                 catch
                 {

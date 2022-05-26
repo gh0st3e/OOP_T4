@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Study\OOP\Lab6-7_New\obj\Debug\
+C:\Study\OOP\Lab6-9\obj\Debug\
 Lab6_7_New
 none
 false
 DEBUG;TRACE
-C:\Study\OOP\Lab6-7_New\App.xaml
+C:\Study\OOP\Lab6-9\App.xaml
 18-2043420795
 
-24-182083324
+25-1024442691
 151397803362
 BookDescription\BookDescription.xaml;CreateBook\CreateBook.xaml;Dictionaries\En.xaml;Dictionaries\Ru.xaml;EditBook\EditBook.xaml;FirstUserControl.xaml;ForUC.xaml;MainWindow.xaml;MyUserControl.xaml;Resources\DynamicDictionary.xaml;Resources\StaticDictionary.xaml;RoutedEventsEx.xaml;SeachBook\Search.xaml;SecondUserControl.xaml;Selection\SelectByPrice.xaml;Selection\SelectByType.xaml;Styles\Style_Red_Green.xaml;Styles\Style_Yellow_Orange.xaml;
 
-False
+True
 
